@@ -1,0 +1,146 @@
+<html>
+    <head>
+	<meta http-equiv="refresh" content="120">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto+Slab">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		body{
+			padding: 20px;
+			background-color: #222222;
+		}
+		div.column {
+		    float: left;
+		    width: 30%;
+			padding: 3px;
+			margin: 10px;
+		}
+		div.statcolumn {
+		    float: left;
+		    width: 30%;
+			height: 10px;
+			padding: 10px;
+			margin: 3px;
+		}
+		div.columnhead {
+		    float: left;
+		    width: 30%;
+			padding: 3px;
+			margin: 10px;
+			border-bottom: 1px solid #333333;
+			font-family: "Roboto Condensed", sans-serif;
+			font-weight: 700;
+			font-style: italic;
+			color: #EEEEEE;
+		}
+		div.track {
+			font-family: "Roboto Condensed", sans-serif;
+			font-weight: 300;
+			margin-bottom: 10px;
+			padding-bottom: 3px;
+			border-bottom: 1px solid #333333;
+			color: #EEEEEE;
+		}
+		/* Clear floats after the columns */
+		div.row:after {
+		    content: "";
+		    display: table;
+		    clear: both;
+		}
+		a, a:hover, a:focus, a:active {
+			text-decoration: none;
+			color: inherit;
+			}
+	</style>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript">
+		//start timing for page load testing
+			var timerStart = Date.now();
+        </script>
+		<script>
+		let currentVersion = 2;
+		let localVersion = localStorage.version;
+		let updateText = "New with this version:\r 1) Past seven days track count. Sum of all tracks listened to in previous seven day (not including the current day).\r 2) Current day track count. Sums number of tracks listened to since midnight of current day.\r 3) Refresh delay doubled, now auto refresh is every two minutes\r 4) Nickname in column now links to Last.FM user page.\r 5) Update notes!";
+		if (localVersion == null){
+		localVersion = 0}
+		else {localVersion = localVersion}
+		if (currentVersion > localVersion)  {
+		alert(updateText);
+		localStorage.version = currentVersion;
+		}
+		else {
+		localStorage.version = currentVersion;
+		}
+		</script>
+        <script language="javascript" type="text/javascript">
+		//set variables for names
+		window.user1 = {
+		nickname: "Whisky",
+		lastfmname: "eng3en"		
+		};
+		window.user2 = {
+		nickname: "Tater",
+		lastfmname: "narakaloka"		
+		};
+		window.user3 = {
+		nickname: "Savage",
+		lastfmname: "augbendawg"		
+		};
+		var now = new Date();
+		var startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+		var startOfDay = startOfDay / 1000;
+		window.daystart = {
+		unixvalue:startOfDay
+		};
+		// BEGINS LOGIC TO GET USERS LIFETIME SCROBBLES 
+
+var data = {
+                "user" : user1.lastfmname,
+                "method" : "user.getinfo",
+                "api_key" : "488bb7f75483a87399296a53b6b9b8ba", //add your API KEY
+                "format" : "json"
+            }	;
+            $.ajax({
+                url:"http://ws.audioscrobbler.com/2.0/",
+                datatype:"application/json",
+                type:"get",
+                data: data,
+                success:function(data){
+					playCountStats = document.getElementById("playCountStats");
+					let array = data.user;
+					let playCount = array.playcount;
+					let eletext = playCount;
+					let element = document.createElement("div");
+					let textelement = document.createTextNode(eletext);
+					element.setAttribute("class", "track");
+					element.appendChild(textelement);
+					playCountStats.appendChild(element);
+						}
+					}
+			);	
+			
+
+        </script>
+    </head>
+    <body>
+		<div class="row">
+		  <div class="statcolumn" id="playCountStats"></div>
+		</div>
+		<script>
+		var head1 = document.getElementById("head1");
+		var headHref1 = ("https://www.last.fm/user/" + user1.lastfmname);
+		head1.setAttribute("href",headHref1);
+		head1.setAttribute("target","_blank");
+		head1.innerHTML = user1.nickname;
+
+		</script>
+		<script type="text/javascript">
+		//end of the page load timing
+             $(document).ready(function() {
+                 console.log("Time until DOMready: ", Date.now()-timerStart);
+             });
+             $(window).load(function() {
+                 console.log("Time until everything loaded: ", Date.now()-timerStart);
+             });
+        </script>
+	</body>
+</html>
