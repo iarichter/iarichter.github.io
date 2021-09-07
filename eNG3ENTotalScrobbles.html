@@ -11,19 +11,36 @@
 		}
 		div.column {
 		    float: left;
-		    width: 40%;
+		    width: 30%;
 			padding: 3px;
 			margin: 10px;
 		}
 		div.statcolumn {
 		    float: left;
-		    width: 40%;
-			height: 100px;
+		    width: 30%;
+			height: 10px;
 			padding: 10px;
 			margin: 3px;
-			font-size: large;
 		}
-
+		div.columnhead {
+		    float: left;
+		    width: 30%;
+			padding: 3px;
+			margin: 10px;
+			border-bottom: 1px solid #333333;
+			font-family: "Roboto Condensed", sans-serif;
+			font-weight: 700;
+			font-style: italic;
+			color: #EEEEEE;
+		}
+		div.track {
+			font-family: "Roboto Condensed", sans-serif;
+			font-weight: 300;
+			margin-bottom: 10px;
+			padding-bottom: 3px;
+			border-bottom: 1px solid #333333;
+			color: #EEEEEE;
+		}
 		/* Clear floats after the columns */
 		div.row:after {
 		    content: "";
@@ -60,6 +77,14 @@
 		window.user1 = {
 		nickname: "Whisky",
 		lastfmname: "eng3en"		
+		};
+		window.user2 = {
+		nickname: "Tater",
+		lastfmname: "narakaloka"		
+		};
+		window.user3 = {
+		nickname: "Savage",
+		lastfmname: "augbendawg"		
 		};
 		var now = new Date();
 		var startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
