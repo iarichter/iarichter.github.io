@@ -11,34 +11,19 @@
 		}
 		div.column {
 		    float: left;
-		    width: 30%;
+		    width: 40%;
 			padding: 3px;
 			margin: 10px;
 		}
-		div.statcolumn {
-		    float: left;
-		    width: 30%;
-			height: 10px;
-			padding: 10px;
-			margin: 3px;
-		}
 		div.columnhead {
 		    float: left;
-		    width: 30%;
+		    width: 40%;
 			padding: 3px;
 			margin: 10px;
 			border-bottom: 1px solid #333333;
 			font-family: "Roboto Condensed", sans-serif;
 			font-weight: 700;
-			font-style: italic;
-			color: #EEEEEE;
-		}
-		div.track {
-			font-family: "Roboto Condensed", sans-serif;
-			font-weight: 300;
-			margin-bottom: 10px;
-			padding-bottom: 3px;
-			border-bottom: 1px solid #333333;
+			font-size: 88px;
 			color: #EEEEEE;
 		}
 		/* Clear floats after the columns */
@@ -78,14 +63,6 @@
 		nickname: "Whisky",
 		lastfmname: "eng3en"		
 		};
-		window.user2 = {
-		nickname: "Tater",
-		lastfmname: "narakaloka"		
-		};
-		window.user3 = {
-		nickname: "Savage",
-		lastfmname: "augbendawg"		
-		};
 		var now = new Date();
 		var startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 		var startOfDay = startOfDay / 1000;
@@ -124,16 +101,9 @@ var data = {
     </head>
     <body>
 		<div class="row">
-		  <div class="statcolumn" id="playCountStats"></div>
+		  <div class="columnhead" id="playCountStats"></div>
 		</div>
-		<script>
-		var head1 = document.getElementById("head1");
-		var headHref1 = ("https://www.last.fm/user/" + user1.lastfmname);
-		head1.setAttribute("href",headHref1);
-		head1.setAttribute("target","_blank");
-		head1.innerHTML = user1.nickname;
 
-		</script>
 		<script type="text/javascript">
 		//end of the page load timing
              $(document).ready(function() {
