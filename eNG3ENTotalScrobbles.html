@@ -74,7 +74,7 @@
 var data = {
                 "user" : user1.lastfmname,
                 "method" : "user.getinfo",
-                "api_key" : "488bb7f75483a87399296a53b6b9b8ba", //add your API KEY
+                "api_key" : ${{ secrets.lastFM2 }}, //add your API KEY
                 "format" : "json"
             }	;
             $.ajax({
