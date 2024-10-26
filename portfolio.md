@@ -3,5 +3,5 @@
 * also I really like the idea of a monospaced serif font
 * introductory text should be minimal:
 ** hello, you've found my little corner of the Internet. 
-** list projects that I have repos for? (Spotify playlist, maybe some SharePoint powershell scripts? how could I demonstrate my work on the Snow<>Jira integration?)
+** list projects that I have repos for? ([Spotify playlist](Spotify.md), maybe some SharePoint powershell scripts? how could I demonstrate my work on the Snow<>Jira integration?)
 ** ohhh maybe I could format each project as almost a super light agile documentation example using the who what why to describe and then describe/show results. any code could be linked 
