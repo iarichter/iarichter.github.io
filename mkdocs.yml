@@ -1,0 +1,29 @@
+site_name: iarichter
+nav:
+  - home: index.md
+  - projects:
+    - spotify: projects/Spotify.md
+    - last.fm: projects/lastfm.md
+    - API integrations:
+      - servicenow <> jira integration: projects/snowJira.md
+  - knowledge base: konwledgebase/kbindex.md
+theme:
+  name: material
+  font: 
+    text: Courier Prime
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+      primary: custom
+      accent: custom
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+      primary: custom
+      accent: custom
+extra_css:
+  - stylesheets/extra.css

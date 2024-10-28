@@ -1,0 +1,20 @@
+:root  {
+    --md-primary-fg-color:        #FFA724;
+    --md-accent-fg-color:         #CA054D;
+    --md-primary-fg-color--light: #FFA724;
+    --md-accent-fg-color--light: #CA054D;
+    --md-primary-fg-color--dark:  #FFA724;
+    --md-accent-fg-color--dark: #6564DB;
+  }
+  .md-content__inner li {
+    line-height: 1;
+  }
+  .md-content__inner ul {
+    line-height: 1;
+  }
+  .md-content__inner h2 {
+    line-height: 1;
+  }
+  #home {
+    display: none;
+  }
